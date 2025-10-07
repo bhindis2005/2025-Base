@@ -44,7 +44,8 @@ public class Robot extends TimedRobot {
     robotContainer = new RobotContainer();
 
     limitSwitch = new limitSwitch();
-    pigeon  = new Pigeon(RobotMap.PIGEON_ID);
+
+    pigeon = new Pigeon(RobotMap.PIGEON_ID);
 
     //These should be at or near the bottom
     oi = new OI();
@@ -66,7 +67,8 @@ public class Robot extends TimedRobot {
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
-    System.out.println(pigeon.get360Heading());;
+
+    System.out.println("Pigeon" + pigeon.get360Heading());
 
     ui.update();
 
