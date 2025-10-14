@@ -3,16 +3,16 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import team.gif.robot.RobotMap;
 
 
-public class limitSwitch {
+public class LimitSwitch {
 
     private static DigitalInput limitSwitch;
 
-    public limitSwitch() {
+    public LimitSwitch() {
         limitSwitch = new DigitalInput(RobotMap.LIMIT_SWITCH_ID);
 
 
     }
-    public boolean getlimitSwitchinput(){
+    public boolean getLimitSwitchInput(){
         return limitSwitch.get();
     }
 }

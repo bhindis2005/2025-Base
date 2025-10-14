@@ -9,8 +9,9 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
+import team.gif.robot.subsystems.LimitSwitch;
+import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
-import team.gif.robot.subsystems.limitSwitch;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -24,12 +25,13 @@ public class Robot extends TimedRobot {
 
   public static OI oi;
 
-  public static limitSwitch limitSwitch;
+  public static LimitSwitch limitSwitch;
 
   public static Pigeon pigeon;
 
-  public static UI ui;
+  public static Talon talon;
 
+  public static UI ui;
 
   public static final boolean enableSwerveDebug = false;
 
@@ -43,10 +45,11 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
 
-    limitSwitch = new limitSwitch();
+    limitSwitch = new LimitSwitch();
 
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
 
+    talon = new Talon();
     //These should be at or near the bottom
     oi = new OI();
     ui = new UI();
@@ -72,7 +75,7 @@ public class Robot extends TimedRobot {
 
     ui.update();
 
-    System.out.println(limitSwitch.getlimitSwitchinput());
+    System.out.println(limitSwitch.getLimitSwitchInput());
   }
 
   /** This function is called once each time the robot enters Disabled mode. */
