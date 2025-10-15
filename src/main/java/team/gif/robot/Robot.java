@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
+import team.gif.robot.commands.JoystickMotorControl;
 import team.gif.robot.subsystems.LimitSwitch;
 import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
@@ -50,6 +51,8 @@ public class Robot extends TimedRobot {
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
 
     talon = new Talon();
+    talon.setDefaultCommand(new JoystickMotorControl());
+
     //These should be at or near the bottom
     oi = new OI();
     ui = new UI();
