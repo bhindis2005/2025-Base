@@ -14,5 +14,6 @@ package team.gif.robot;
  */
 public final class Constants {
      public static final double CIM_MOTOR_PERCENT = 0.20;
+     public static final double SPARK_MOTOR_VOLTAGE = 2.5;
 
 }

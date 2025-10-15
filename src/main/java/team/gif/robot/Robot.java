@@ -4,6 +4,7 @@
 
 package team.gif.robot;
 
+import com.revrobotics.spark.SparkMax;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -11,6 +12,7 @@ import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
 import team.gif.robot.commands.JoystickMotorControl;
 import team.gif.robot.subsystems.LimitSwitch;
+import team.gif.robot.subsystems.SparkMaxMotorControl;
 import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
@@ -34,6 +36,8 @@ public class Robot extends TimedRobot {
 
   public static UI ui;
 
+  public static SparkMaxMotorControl sparkMax;
+
   public static final boolean enableSwerveDebug = false;
 
   /**
@@ -45,6 +49,8 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
+
+    sparkMax = new SparkMaxMotorControl();
 
     limitSwitch = new LimitSwitch();
 

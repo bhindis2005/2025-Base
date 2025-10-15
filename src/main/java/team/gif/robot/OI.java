@@ -1,8 +1,10 @@
 package team.gif.robot;
 
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import team.gif.robot.commands.GetFPGATimestamp;
+import team.gif.robot.commands.SparkMaxSetVoltage;
 import team.gif.robot.commands.TalonMotorsSpinBackward;
 import team.gif.robot.commands.TalonMotorsSpinForward;
 
@@ -93,6 +95,6 @@ public class OI {
         dA.onTrue(new GetFPGATimestamp());
         dB.whileTrue(new TalonMotorsSpinBackward());
         dX.whileTrue(new TalonMotorsSpinForward());
-
+        dY.whileTrue(new SparkMaxSetVoltage());
     }
 }
