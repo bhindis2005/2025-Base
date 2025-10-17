@@ -4,11 +4,11 @@ import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class TalonMotorsSpinBackward extends Command {
+public class SetVelocitySparkMax extends Command {
 
-    public TalonMotorsSpinBackward() {
+    public SetVelocitySparkMax() {
         super();
-        addRequirements(Robot.talon); // uncomment
+        addRequirements(Robot.sparkMax);
     }
 
     // Called when the command is initially scheduled.
@@ -18,7 +18,8 @@ public class TalonMotorsSpinBackward extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.talon.turnMotor(-Constants.TALON_MOTOR_PERCENT);
+        Robot.sparkMax.setRPM(Constants.SPARKMAX_MOTOR_RPM);
+
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
@@ -30,6 +31,6 @@ public class TalonMotorsSpinBackward extends Command {
     // Called when the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        Robot.talon.turnMotor(0);
+        Robot.sparkMax.setRPM(0);
     }
 }
