@@ -11,7 +11,9 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
 import team.gif.robot.commands.JoystickMotorControl;
+import team.gif.robot.commands.ToggleDoubleSolenoid;
 import team.gif.robot.subsystems.LimitSwitch;
+import team.gif.robot.subsystems.Pneumatics;
 import team.gif.robot.subsystems.SparkMaxMotorControl;
 import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
@@ -38,6 +40,8 @@ public class Robot extends TimedRobot {
 
   public static SparkMaxMotorControl sparkMax;
 
+  public static Pneumatics pneumatics;
+
   public static final boolean enableSwerveDebug = false;
 
   /**
@@ -55,6 +59,8 @@ public class Robot extends TimedRobot {
     limitSwitch = new LimitSwitch();
 
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
+
+    pneumatics = new Pneumatics();
 
     talon = new Talon();
     talon.setDefaultCommand(new JoystickMotorControl());
