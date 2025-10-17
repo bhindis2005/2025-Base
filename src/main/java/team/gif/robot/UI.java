@@ -20,7 +20,11 @@ public class UI {
        ShuffleboardTab tab = Shuffleboard.getTab("BAB-2025");
        tab.addBoolean("LS State",Robot.limitSwitch::getLimitSwitchInput);
        Robot.pigeon.addToShuffleboard("BAB-2025", "Pigeon heading");
+
+       tab.addDouble("Neo Rpm",Robot.sparkMax::getRPM);
+
     }
+
 
     /**
      * Widgets which are updated periodically should be placed here
