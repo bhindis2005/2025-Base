@@ -89,10 +89,11 @@ public class OI {
          *   aX.onTrue(new PrintCommand("aX"));
          */
 
-        dA.onTrue(new GetFPGATimestamp());
+//        dA.onTrue(new GetFPGATimestamp());
         dB.whileTrue(new TalonMotorsSpinBackward());
         dX.whileTrue(new TalonMotorsSpinForward());
         dY.whileTrue(new SparkMaxSetVoltage());
         dA.whileTrue(new SetVelocitySparkMax());
+        dLBump.onTrue(new ToggleDoubleSolenoid());
     }
 }
