@@ -13,12 +13,14 @@ import team.gif.robot.RobotMap;
 
 
 public class Talon extends SubsystemBase {
-    /**
-     * Creates a new ExampleSubsystem.
-     */
+
+    //You should remove unneeded comment such as the one above (do this for the rest of your code, I wont be commenting
+
     private TalonSRX talonSRX;
+
+
     public Talon() {
-        talonSRX = new TalonSRX(RobotMap.WINCH_MOTOR_ID);
+        talonSRX = new TalonSRX(RobotMap.TALON_ID);
         talonSRX.configFactoryDefault();
         talonSRX.setNeutralMode(NeutralMode.Brake);
     }

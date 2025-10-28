@@ -18,7 +18,7 @@ public class SetVelocitySparkMax extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.sparkMax.setRPM(Constants.SPARKMAX_MOTOR_RPM);
+        Robot.sparkMax.setRPM(Constants.SPARK_MOTOR_RPM);
 
     }
 

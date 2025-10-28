@@ -22,7 +22,7 @@ public class SparkMaxMotorControl extends SubsystemBase {
     private RelativeEncoder neoEncoder;
 
     public SparkMaxMotorControl() {
-        sparkMax = new SparkMax(RobotMap.SPARKMAX_ID, SparkLowLevel.MotorType.kBrushless);
+        sparkMax = new SparkMax(RobotMap.SPARK_ID, SparkLowLevel.MotorType.kBrushless);
 
         SparkMaxConfig config = new SparkMaxConfig();
         sparkPID = sparkMax.getClosedLoopController();

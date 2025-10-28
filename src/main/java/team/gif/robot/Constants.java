@@ -15,7 +15,7 @@ package team.gif.robot;
 public final class Constants {
      public static final double TALON_MOTOR_PERCENT = 0.20;
      public static final double SPARK_MOTOR_VOLTAGE = 2.5;
-     public static final double SPARKMAX_MOTOR_RPM = 60;
+     public static final double SPARK_MOTOR_RPM = 60; //Be consistent! For the constant above, you have sparkmax as spark but here you wrote the whole thing
      public static final double SPARK_MOTOR_P=0.00085;
      public static final double SPARK_MOTOR_I=0.00000005;
 }
